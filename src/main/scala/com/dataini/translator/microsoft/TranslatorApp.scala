@@ -1,7 +1,7 @@
 package com.dataini.translator.microsoft
 
 /**
- * Created by guanwang on 10/8/14.
+ * Created by Guanjun Wang on 10/8/14.
  */
 
 import scalaj.http.{HttpOptions, Http}
@@ -18,7 +18,7 @@ object TranslatorApp {
     }
     //"古老斑驳的石库门，高脚杯、咖啡吧和老唱片里都流淌着香艳的上海情，去看看小洋楼的小资情调，再品品地道上海菜中的上海味道。"
 
-    println((translated))
+    println(translated)
 
   }
 
@@ -49,8 +49,8 @@ object TranslatorApp {
 
       val response = Http.post("https://datamarket.accesscontrol.windows.net/v2/OAuth2-13")
         .params("grant_type" -> "client_credentials",
-          "client_id" -> "chinese_spot_trans",
-          "client_secret" -> "k7YvXYgGABYJCOWgpWOGWXLciIcZaGatxRivcwWefi0=",
+          "client_id" -> "your_client_id",
+          "client_secret" -> "your_client_secret",
           "scope" -> "http://api.microsofttranslator.com")
         .options(HttpOptions.connTimeout(10000), HttpOptions.readTimeout(10000))
         .asString
